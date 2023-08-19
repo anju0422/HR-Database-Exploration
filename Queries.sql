@@ -107,14 +107,14 @@ FROM employees
         the minimum salary for all departments. */
 
    WITH CTE AS( 
-		SELECT 
-		first_name,
-		last_name,
-		department_id,
-		salary,
-		MIN(salary) OVER (PARTITION BY department_id) AS min_sal
-		FROM employees
-	) 
+   SELECT 
+   first_name,
+   last_name,
+   department_id,
+   salary,
+   MIN(salary) OVER (PARTITION BY department_id) AS min_sal
+   FROM employees
+   ) 
         SELECT 
         first_name,
         last_name,
