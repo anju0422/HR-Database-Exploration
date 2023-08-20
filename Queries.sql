@@ -122,4 +122,24 @@ FROM employees
         FROM CTE 
         WHERE salary = min_sal;
 
+/* Q9. Write a query to retrieve the names of managers who have a minimum of five employees reporting directly to them. 
+       The list of managers should be sorted in alphabetical order */
+
+  WITH CTE AS(
+  SELECT
+  manager_id,
+  COUNT(manager_id) AS emp_rep_cnt
+  FROM Employees  
+  GROUP BY manager_id
+  HAVING COUNT(manager_id) >=5
+  ) 
+      SELECT 
+      CONCAT(e.first_name, " ", e.last_name) AS Manager_name
+      FROM Employees e 
+      JOIN CTE c 
+      ON e.employee_id = c.manager_id
+      ORDER BY Manager_name ASC;
+
+
+
 
