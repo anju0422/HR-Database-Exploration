@@ -140,6 +140,31 @@ FROM employees
       ON e.employee_id = c.manager_id
       ORDER BY Manager_name ASC;
 
+/* Q10. A company's executives are interested in seeing who earns the most money in each of the company's departments. 
+        A high earner in a department is an employee who has a salary in the top three unique salaries for that department.
+        Write a solution to find the employees who are high earners in each of the departments. Return the result table in any order. */
+
+ WITH CTE AS(
+ SELECT 
+ CONCAT(e.first_name, " ", e.last_name) AS Employee,
+ d.department_name AS Department,
+ e.salary AS Salary,
+ DENSE_RANK() OVER(PARTITION BY e.department_id ORDER BY e.salary DESC) AS rnk
+ FROM Employees e 
+ JOIN Departments d 
+ ON e.department_id = d.department_id
+) 
+   SELECT 
+   Department,
+   Employee,
+   Salary 
+   FROM CTE 
+   WHERE rnk IN (1,2,3)
+   ORDER BY Salary DESC;
+
+
+
+
 
 
 
