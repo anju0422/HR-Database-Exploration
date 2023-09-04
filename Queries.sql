@@ -28,7 +28,7 @@ SELECT "Countries" AS Table_name, COUNT(*) AS Number_of_rows FROM Countries
 UNION ALL 
 SELECT "Regions" AS Table_name, COUNT(*) AS Number_of_rows FROM Regions
 UNION ALL 
-SELECT "Job_grade" AS Table_name, COUNT(*) AS Number_of_rows FROM Job_grade;
+SELECT "Job_grade" AS Table_name, COUNT(*) AS Number_of_rows FROM Job_Grade;
 
 
 /* Q1: Retrieve a list of employees with their manager's name. */
