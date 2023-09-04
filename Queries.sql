@@ -3,18 +3,32 @@
 
 /* We have total of 8 tables for Analysis */
 
-SELECT * FROM Employees
-SELECT * FROM Departments
-SELECT * FROM Jobs
-SELECT * FROM Job_History
-SELECT * FROM Locations
-SELECT * FROM Countries
-SELECT * FROM Regions 
-SELECT * FROM Job_Grade
+SELECT * FROM Employees;
+SELECT * FROM Departments;
+SELECT * FROM Jobs;
+SELECT * FROM Job_History;
+SELECT * FROM Locations;
+SELECT * FROM Countries;
+SELECT * FROM Regions; 
+SELECT * FROM Job_Grade;
 
-    /* Number of records in each table */
+/* Number of records present in each table */
 
-
+SELECT "Employees" AS Table_name, COUNT(*) AS Number_of_rows FROM Employees
+UNION ALL 
+SELECT "Departments" AS Table_name, COUNT(*) AS Number_of_rows FROM Departments
+UNION ALL 
+SELECT "Jobs" AS Table_name, COUNT(*) AS Number_of_rows FROM Jobs
+UNION ALL 
+SELECT "Job_history" AS Table_name, COUNT(*) AS Number_of_rows FROM Job_History
+UNION ALL 
+SELECT "Locations" AS Table_name, COUNT(*) AS Number_of_rows FROM Locations
+UNION ALL 
+SELECT "Countries" AS Table_name, COUNT(*) AS Number_of_rows FROM Countries
+UNION ALL 
+SELECT "Regions" AS Table_name, COUNT(*) AS Number_of_rows FROM Regions
+UNION ALL 
+SELECT "Job_grade" AS Table_name, COUNT(*) AS Number_of_rows FROM Job_grade;
 
 
 /* Q1: Retrieve a list of employees with their manager's name. */
