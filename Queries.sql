@@ -1,4 +1,20 @@
- /* Q1: Retrieve a list of employees with their manager's name. */
+/* Tool used - MySQL Workbench
+    Author - Anju Saini */
+
+/* We have total of 7 tables for Analysis */
+
+SELECT * FROM Employees
+SELECT * FROM Departments
+SELECT * FROM Jobs
+SELECT * FROM Job_History
+SELECT * FROM Locations
+SELECT * FROM Countries
+SELECT * FROM Regions 
+
+
+
+
+/* Q1: Retrieve a list of employees with their manager's name. */
  
  SELECT 
  CONCAT(e.first_name, " ", e.last_name) AS Employee_name,
