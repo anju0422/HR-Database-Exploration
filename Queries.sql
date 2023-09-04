@@ -1,7 +1,7 @@
 /* Tool used - MySQL Workbench
     Author - Anju Saini */
 
-/* We have total of 7 tables for Analysis */
+/* We have total of 8 tables for Analysis */
 
 SELECT * FROM Employees
 SELECT * FROM Departments
@@ -10,6 +10,9 @@ SELECT * FROM Job_History
 SELECT * FROM Locations
 SELECT * FROM Countries
 SELECT * FROM Regions 
+SELECT * FROM Job_Grade
+
+    /* Number of records in each table */
 
 
 
