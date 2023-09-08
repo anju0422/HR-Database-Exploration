@@ -3,7 +3,7 @@
 ### Overview
 This project is aimed at analyzing an employee database to gain insights and extract valuable information for HR and management purposes. The dataset includes information about employees, departments, salaries, job histories, and more.
 
-### SQL Challenges and Analysis
+### Database Exploration Tasks
 1. Retrieve a list of employees with their manager's name.
 2. Find employees who have a higher salary than their manager.
 3. Write a CTE to find the department with the highest number of employees.
