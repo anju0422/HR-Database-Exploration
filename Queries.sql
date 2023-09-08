@@ -223,8 +223,7 @@ FROM employees
        FROM CTE 
        WHERE no_of_employees = 0;
 
-         
-  OR 
+   OR 
 
 SELECT 
 department_id,
