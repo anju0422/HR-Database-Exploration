@@ -203,8 +203,7 @@ FROM employees
    Employee,
    Salary 
    FROM CTE 
-   WHERE rnk IN (1,2,3)
-   ORDER BY Salary DESC;
+   WHERE rnk IN (1,2,3);
 
 
 
