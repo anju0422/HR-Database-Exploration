@@ -93,8 +93,7 @@ WHERE salary > (SELECT
 /* Q5. Write a query to find the name (first_name, last_name) of the employees who have a manager working in a US-based department. */
 
 SELECT 
-e.first_name,
-e.last_name
+CONCAT(e.first_name," ", e.last_name) AS Emp_name
 FROM Employees e
 JOIN Employees m 
 ON e.manager_id = m.employee_id
@@ -104,13 +103,26 @@ JOIN Locations l
 ON d.location_id = l.location_id  
 WHERE (l.country_id) = "US";
 
+     OR 
+
+SELECT
+CONCAT(e.first_name, " ", e.last_name) AS name
+FROM Employees e
+JOIN Employees m 
+ON e.manager_id = m.employee_id
+WHERE m.department_id IN ( SELECT
+                           department_id
+                           FROM Departments d
+                           JOIN Locations l 
+                           ON d.location_id = l.location_id 
+                           WHERE l.country_id = "US");
+
 /* Q6.  Write a query to find the name (first_name, last_name), and salary of the employees whose salary is 
   greater than their department's average salary.*/
 
 WITH CTE AS(
 SELECT
-first_name,
-last_name, 
+CONCAT(first_name," ", last_name) AS Emp_name, 
 department_id,
 AVG(salary) OVER (PARTITION BY department_id) AS avg_sal,
 salary 
@@ -127,13 +139,12 @@ FROM employees
        the average salary and work in any of the IT departments. */
 
  SELECT 
-   first_name,
-   last_name,
-   salary
+   CONCAT(e.first_name," ", e.last_name) AS name,
+   e.salary AS salary
    FROM employees e 
    JOIN departments d 
    ON e.department_id = d.department_id
-   WHERE salary > (SELECT AVG(salary) FROM employees) 
+   WHERE e.salary > (SELECT AVG(salary) FROM employees) 
    AND d.department_name LIKE "IT%";
 
 /* Q8.  Write a query to find the name (first_name, last_name), and salary of the employees who earn the same salary as 
