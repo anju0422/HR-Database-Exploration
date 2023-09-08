@@ -205,6 +205,35 @@ FROM employees
    FROM CTE 
    WHERE rnk IN (1,2,3);
 
+ /* Q11. Write a query to list the department ID and name of all the departments where no employee is working. */
+      
+      WITH CTE AS(
+      SELECT
+      d.department_id,
+      d.department_name,
+      COUNT(e.employee_id) AS no_of_employees
+      FROM Departments d 
+      LEFT JOIN Employees e
+      ON e.department_id = d.department_id
+      GROUP BY d.department_id, d.department_name
+      ) 
+         SELECT
+         department_id,
+         department_name
+         FROM CTE 
+         WHERE no_of_employees = 0;
+
+         
+         OR 
+
+
+SELECT 
+department_id,
+department_name
+FROM Departments 
+WHERE department_id NOT IN (SELECT department_id FROM Employees);
+
+
 
 
 
