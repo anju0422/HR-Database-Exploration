@@ -231,6 +231,19 @@ department_name
 FROM Departments 
 WHERE department_id NOT IN (SELECT department_id FROM Employees);
 
+/* Q12. Write a query to fetch even numbered records from employees table. */
+
+WITH CTE AS(
+SELECT
+*,
+ROW_NUMBER() OVER(ORDER BY employee_id) AS rn
+FROM Employees
+ )
+    SELECT 
+    *
+    FROM CTE 
+    WHERE rn%2 = 0;
+
 
 
 
