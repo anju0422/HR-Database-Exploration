@@ -4,6 +4,7 @@
 This project is aimed at analyzing an employee database to gain insights and extract valuable information for HR and management purposes. The dataset includes information about employees, departments, salaries, job histories, and more.
 
 
+
 1. Retrieve a list of employees with their manager's name.
 2. Find employees who have a higher salary than their manager.
 3. Write a CTE to find the department with the highest number of employees.
@@ -19,7 +20,7 @@ This project is aimed at analyzing an employee database to gain insights and ext
    The list of managers should be sorted in alphabetical order.
 10. A company's executives are interested in seeing who earns the most money in each of the company's departments. 
     A high earner in a department is an employee who has a salary in the top three unique salaries for that department.
-    Write a solution to find the employees who are high earners in each of the departments. Return the result table in any     order.
+    Write a solution to find the employees who are high earners in each of the departments. Return the result table in any order.
 
 
 
