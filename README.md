@@ -1,7 +1,7 @@
 # SQL-Employee Database Exploration
 
 ### Overview
-This project is aimed at analyzing an employee database to gain insights and extract valuable information for HR and management purposes. The dataset includes information about employees, departments, salaries, job histories, and more.
+Analyzing an employee database to gain insights and extract valuable information for HR and management purposes. The dataset includes information about employees, departments, salaries, job histories, and more.
 
 ### Database Exploration Tasks
 1. Retrieve a list of employees with their manager's name.
